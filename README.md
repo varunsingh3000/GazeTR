@@ -3,11 +3,11 @@
 This is the repository for the implemenation of the Gaze estimation problem reviewed in the paper "**[Appearance-based Gaze Estimation With Deep
 Learning: A Review and Benchmark](https://arxiv.org/abs/2104.12668)**". The model used was GazeTR and details about it can be found in the "**[Gaze Estimation using Transformer](https://ieeexplore.ieee.org/abstract/document/9956687?casa_token=wO5ZV5h70ogAAAAA:wTP6IYD8AM9plbUoWM_SObV5sXDYH4u71GnAP4ZPDXek4bVwlxwLInXB0hzxosYbCP7ruULK)**" paper. This repository is created for the CS4240 Deep Learning course 2022/2023 and provides the instructions for the setup of the repository and describes our implementation in detail. The blog describing our approach and methodology can be found [here](https://hackmd.io/@GazeEstimationGazeTRGaze360gGrp72/BJXa7VOM2). The original details and description of the GazeTR repository can be found below.
 
-## Requirenments 
+## Requirements 
 
 1. The GazeTR repo authors inform us to install `pytorch1.7.0`. However we had problems installing this particular version of pytorch with cuda, so we installed `torch==1.12.1+cu116` and the setup still worked. The command used was `pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu116`. 
 
-## Setup instructions
+## Setup Instructions
 
 Our setup was done a google colab instance setup via GCP. The instance was a `n1-highmem-2` and had 1 NVIDIA T4 gpu. The exact jupyter file with our setup is provided in the repository file.
 
@@ -22,7 +22,7 @@ Our setup was done a google colab instance setup via GCP. The instance was a `n1
 9. For the testing config, set the correct path for parameter `data` which is the path for the test set used for the evaluation.
 10. Feel free to change any other model parameters but the config files found in this repository contain the hyperparameter values we used.
 
-## Training and Evaluation instructions
+## Training and Evaluation Instructions
 
 1. Leave one out training was done and the following command was used: `!python /content/GazeTR/trainer/leave.py -s /content/GazeTR/config/train/config_gaze360.yaml -p 0`.
 2. The original authors used a pytorch warmup optimiser for gradually increasing the learning rate, we follow their instruction. The command is `!pip install git+https://github.com/ildoonet/pytorch-gradual-warmup-lr.git`.
