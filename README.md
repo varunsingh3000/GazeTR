@@ -28,13 +28,17 @@ Our setup was done a google colab instance setup via GCP. The instance was a `n1
 3. After the training is done, we perform leave one out evaluation. The command used was `!python /content/GazeTR/tester/leave.py -s /content/GazeTR/config/train/config_gaze360.yaml -t /content/GazeTR/config/test/config_gaze360.yaml -p 0`. 
 4. The angular error calculation is done in the `/tester/leave.py`. Each model checkpoint is used for the evaluation of the test set and the average angular error for each checkpoint is logged.
 
-## Results
+## Results and Discussion
 
 A summary of the results is provided below. 
 
 ![resulttable](https://user-images.githubusercontent.com/64498789/232320217-38ffb773-756b-49fc-9b27-4799cedc1c03.png)
 
-A detailed description of the results of our replication can be found [here](https://hackmd.io/@GazeEstimationGazeTRGaze360gGrp72/BJXa7VOM2).
+The first two rows highlight the angular error obtained by the GazeTR paper authors on the Gaze360 dataset. Their model was trained only on ETH-XGaze dataset and then directly evaluated on the Gaze360 dataset and other datasets as well but we are only interested in the Gaze360 dataset for this replication. 
+
+Interestingly in our replication of the GazeTR-Hybrid model for the Gaze360 dataset we get an angular error of 26.51◦ which is much higher than the quoted number of 10.62◦ by the authors. Ideally the results from our replication and the authors should have been almost the same. The techniques for the setup of the GazeTR repository, the preprocessing of the dataset and the implementation were all followed from the GazeTR Github repository and no deviation was done. However the repository itself is not well documented, updated or organised. We had to frequently consult the authors phi-lab [5] website as well for the dataset preprocessing so it is possible that a crucial step for the setup or the preprocessing was missed.
+
+Finally the finetuned model that was trained on the Gaze360 dataset and then evaluated on it's test set acheived the best angular error of 9.05◦. However this was to be expected since we trained the pretrained model on the Gaze360 dataset and then evaluated on it as well. But this does at least show that the training and evaluation implementation is working and seems to be correctly setup by us which makes the inconsistency in the angular error obtained by us in our replication not coming close to the authors even more peculiar.
 
 
 # GazeTR
