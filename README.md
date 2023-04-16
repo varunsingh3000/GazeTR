@@ -1,5 +1,18 @@
+# Replicated GazeTR
+
 This is the repository for the implemenation of the Gaze estimation problem reviewed in the paper "**Appearance-based Gaze Estimation With Deep
-Learning: A Review and Benchmark**". The model used was GazeTR and details about it can be found in the "**Gaze Estimation using Transformer**" paper. This repository is created for the CS4240 Deep Learning course 2022/2023 and provides the instructions for the setup of the repository and describes our implementation in detail.
+Learning: A Review and Benchmark**". The model used was GazeTR and details about it can be found in the "**Gaze Estimation using Transformer**" paper. This repository is created for the CS4240 Deep Learning course 2022/2023 and provides the instructions for the setup of the repository and describes our implementation in detail. The blog describing our approach and methodology can be found [here]([url](https://hackmd.io/@GazeEstimationGazeTRGaze360gGrp72/BJXa7VOM2)). The original details and description of the GazeTR repository can be found below.
+
+## Requirenments 
+
+1. The GazeTR repo authors inform us to install `pytorch1.7.0`. However we had problems installing this particular version of pytorch with cuda, so we installed `torch==1.12.1+cu116`. The command used was `pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu116`.
+
+## Setup and Implementation instructions
+
+Our setup was done a google colab instance setup via GCP. The instance was a `n1-highmem-2` and had 1 NVIDIA T4 gpu. The exact jupyter file with our setup is provided in the repository file.
+
+1. First clone the GazeTR repository.
+2. Download the Gaze360 dataset
 
 
 # GazeTR
