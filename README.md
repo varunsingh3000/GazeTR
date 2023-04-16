@@ -1,11 +1,11 @@
 # Replicated GazeTR
 
-This is the repository for the implemenation of the Gaze estimation problem reviewed in the paper "**Appearance-based Gaze Estimation With Deep
-Learning: A Review and Benchmark**". The model used was GazeTR and details about it can be found in the "**Gaze Estimation using Transformer**" paper. This repository is created for the CS4240 Deep Learning course 2022/2023 and provides the instructions for the setup of the repository and describes our implementation in detail. The blog describing our approach and methodology can be found [here](https://hackmd.io/@GazeEstimationGazeTRGaze360gGrp72/BJXa7VOM2). The original details and description of the GazeTR repository can be found below.
+This is the repository for the implemenation of the Gaze estimation problem reviewed in the paper "**[Appearance-based Gaze Estimation With Deep
+Learning: A Review and Benchmark](https://arxiv.org/abs/2104.12668)**". The model used was GazeTR and details about it can be found in the "**Gaze Estimation using Transformer**" paper. This repository is created for the CS4240 Deep Learning course 2022/2023 and provides the instructions for the setup of the repository and describes our implementation in detail. The blog describing our approach and methodology can be found [here](https://hackmd.io/@GazeEstimationGazeTRGaze360gGrp72/BJXa7VOM2). The original details and description of the GazeTR repository can be found below.
 
 ## Requirenments 
 
-1. The GazeTR repo authors inform us to install `pytorch1.7.0`. However we had problems installing this particular version of pytorch with cuda, so we installed `torch==1.12.1+cu116`. The command used was `pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu116`.
+1. The GazeTR repo authors inform us to install `pytorch1.7.0`. However we had problems installing this particular version of pytorch with cuda, so we installed `torch==1.12.1+cu116` and the setup still worked. The command used was `pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu116`. 
 
 ## Setup instructions
 
