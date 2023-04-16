@@ -1,18 +1,40 @@
 # Replicated GazeTR
 
 This is the repository for the implemenation of the Gaze estimation problem reviewed in the paper "**Appearance-based Gaze Estimation With Deep
-Learning: A Review and Benchmark**". The model used was GazeTR and details about it can be found in the "**Gaze Estimation using Transformer**" paper. This repository is created for the CS4240 Deep Learning course 2022/2023 and provides the instructions for the setup of the repository and describes our implementation in detail. The blog describing our approach and methodology can be found [here][url](https://hackmd.io/@GazeEstimationGazeTRGaze360gGrp72/BJXa7VOM2). The original details and description of the GazeTR repository can be found below.
+Learning: A Review and Benchmark**". The model used was GazeTR and details about it can be found in the "**Gaze Estimation using Transformer**" paper. This repository is created for the CS4240 Deep Learning course 2022/2023 and provides the instructions for the setup of the repository and describes our implementation in detail. The blog describing our approach and methodology can be found [here](https://hackmd.io/@GazeEstimationGazeTRGaze360gGrp72/BJXa7VOM2). The original details and description of the GazeTR repository can be found below.
 
 ## Requirenments 
 
 1. The GazeTR repo authors inform us to install `pytorch1.7.0`. However we had problems installing this particular version of pytorch with cuda, so we installed `torch==1.12.1+cu116`. The command used was `pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu116`.
 
-## Setup and Implementation instructions
+## Setup instructions
 
 Our setup was done a google colab instance setup via GCP. The instance was a `n1-highmem-2` and had 1 NVIDIA T4 gpu. The exact jupyter file with our setup is provided in the repository file.
 
 1. First clone the GazeTR repository.
-2. Download the Gaze360 dataset
+2. Download the Gaze360 dataset using the command given at the beginning of the notebook.
+3. Extract the tar file containing the Gaze360 dataset files which will be the `imgs` containing head and body images for each subject in different outdoor environments. The `metadata.mat` file is needed to execute the processing code provided by the [phi-labs](https://phi-ai.buaa.edu.cn/Gazehub/3D-dataset/#gaze360).
+4. Download the pretrained model provided by the GazeTR authors in the original repository or below this repository.
+5. Set the correct paths for the `root` and `out_root` variables. These variables are the paths for the dataset and the output path for saving the processed dataset.
+6. In the following directory make changes to the config yaml files for training and testing for the gaze360 dataset `GazeTR->config->train`.
+7. For the training config, set the correct paths for the parameters `save` which is the directory where the trained model at each checkpoint is saved, `data` which has the paths for the processed dataset, `pretrain` which is used to define the path of the pretrained model.
+8. For the testing config, set the correct path for parameter `data` which is the path for the test set used for the evaluation.
+9. Feel free to change any other model parameters but the config files found in this repository contain the hyperparameter values we used.
+
+## Training and Evaluation instructions
+
+1. Leave one out training was done and the following command was used: `!python /content/GazeTR/trainer/leave.py -s /content/GazeTR/config/train/config_gaze360.yaml -p 0`.
+2. The original authors used a pytorch warmup optimiser for gradually increasing the learning rate, we follow their instruction. The command is `!pip install git+https://github.com/ildoonet/pytorch-gradual-warmup-lr.git`.
+3. After the training is done, we perform leave one out evaluation. The command used was `!python /content/GazeTR/tester/leave.py -s /content/GazeTR/config/train/config_gaze360.yaml -t /content/GazeTR/config/test/config_gaze360.yaml -p 0`. 
+4. The angular error calculation is done in the `/tester/leave.py`. Each model checkpoint is used for the evaluation of the test set and the average angular error for each checkpoint is logged.
+
+## Results
+
+A summary of the results is provided below. 
+
+![resulttable](https://user-images.githubusercontent.com/64498789/232320217-38ffb773-756b-49fc-9b27-4799cedc1c03.png)
+
+A detailed description of the results of our replication can be found [here](https://hackmd.io/@GazeEstimationGazeTRGaze360gGrp72/BJXa7VOM2).
 
 
 # GazeTR
