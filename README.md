@@ -1,3 +1,7 @@
+This is the repository for the implemenation of the Gaze estimation problem reviewed in the paper "**Appearance-based Gaze Estimation With Deep
+Learning: A Review and Benchmark**". The model used was GazeTR and details about it can be found in the "**Gaze Estimation using Transformer**" paper. This repository is created for the CS4240 Deep Learning course 2022/2023 and provides the instructions for the setup of the repository and describes our implementation in detail.
+
+
 # GazeTR
 
 We provide the code of GazeTR-Hybrid in "**Gaze Estimation using Transformer**". This work is accepted by ICPR2022.
