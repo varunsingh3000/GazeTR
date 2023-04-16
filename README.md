@@ -16,10 +16,11 @@ Our setup was done a google colab instance setup via GCP. The instance was a `n1
 3. Extract the tar file containing the Gaze360 dataset files which will be the `imgs` containing head and body images for each subject in different outdoor environments. The `metadata.mat` file is needed to execute the processing code provided by the [phi-labs](https://phi-ai.buaa.edu.cn/Gazehub/3D-dataset/#gaze360).
 4. Download the pretrained model provided by the GazeTR authors in the original repository or below this repository.
 5. Set the correct paths for the `root` and `out_root` variables. These variables are the paths for the dataset and the output path for saving the processed dataset.
-6. In the following directory make changes to the config yaml files for training and testing for the gaze360 dataset `GazeTR->config->train`.
-7. For the training config, set the correct paths for the parameters `save` which is the directory where the trained model at each checkpoint is saved, `data` which has the paths for the processed dataset, `pretrain` which is used to define the path of the pretrained model.
-8. For the testing config, set the correct path for parameter `data` which is the path for the test set used for the evaluation.
-9. Feel free to change any other model parameters but the config files found in this repository contain the hyperparameter values we used.
+6. Continue executing the cells which will contain the preprocessing functions for the Gaze360 dataset used from the [phi-labs](https://phi-ai.buaa.edu.cn/Gazehub/3D-dataset/#gaze360).
+7. In the following directory make changes to the config yaml files for training and testing for the gaze360 dataset `GazeTR->config->train`.
+8. For the training config, set the correct paths for the parameters `save` which is the directory where the trained model at each checkpoint is saved, `data` which has the paths for the processed dataset, `pretrain` which is used to define the path of the pretrained model.
+9. For the testing config, set the correct path for parameter `data` which is the path for the test set used for the evaluation.
+10. Feel free to change any other model parameters but the config files found in this repository contain the hyperparameter values we used.
 
 ## Training and Evaluation instructions
 
