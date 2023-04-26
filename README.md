@@ -9,7 +9,7 @@ Learning: A Review and Benchmark](https://arxiv.org/abs/2104.12668)**". The mode
 
 ## Setup Instructions
 
-Our setup was done a google colab instance setup via GCP. The instance was a `n1-highmem-2` and had 1 NVIDIA T4 gpu. The exact jupyter file with our setup is provided in the repository file.
+Our setup was on a google colab instance via GCP. The instance was a `n1-highmem-2` and had 1 NVIDIA T4 gpu. The exact jupyter file with our setup is provided in the repository file.
 
 1. First clone the GazeTR repository.
 2. Download the Gaze360 dataset using the command given at the beginning of the notebook.
